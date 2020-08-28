@@ -16,6 +16,9 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* MarvelHeroesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MarvelHeroesTests.m */; };
 		76E46D62168EEA244467EE8B /* libPods-MarvelHeroes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4182E4282B5FDB32AAE77CE /* libPods-MarvelHeroes.a */; };
+		794B4AF824F93B93008FCF61 /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40B13298307746EE9C670C35 /* AvenirLTStd-Book.otf */; };
+		794B4AF924F93B93008FCF61 /* AvenirLTStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA12A3632387479AB790B574 /* AvenirLTStd-Medium.otf */; };
+		794B4AFA24F93B93008FCF61 /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 348631DCE0BF4C2CA328FE97 /* AvenirLTStd-Roman.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		CBA18FED80CAE6E74938060D /* libPods-MarvelHeroes-MarvelHeroesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AEFFE5E5C1EA797F6D3F55 /* libPods-MarvelHeroes-MarvelHeroesTests.a */; };
 /* End PBXBuildFile section */
@@ -49,16 +52,35 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MarvelHeroes/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MarvelHeroes/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MarvelHeroes/main.m; sourceTree = "<group>"; };
+		19561FDB420C40DEB56DC2ED /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		1E684C8819714515BC0D9C96 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		1F46EE91B86E4481BDD22D8A /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* MarvelHeroes-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarvelHeroes-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* MarvelHeroes-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MarvelHeroes-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		322FF7E8129847ED9E379C92 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		348631DCE0BF4C2CA328FE97 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Roman.otf"; path = "../src/assets/fonts/AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
+		40B13298307746EE9C670C35 /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Book.otf"; path = "../src/assets/fonts/AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
 		5AE52DBFE0CCA3E35C940C11 /* Pods-MarvelHeroes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroes.release.xcconfig"; path = "Target Support Files/Pods-MarvelHeroes/Pods-MarvelHeroes.release.xcconfig"; sourceTree = "<group>"; };
+		6CA764EEFD5841BCB595E316 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		73177973E563416B9A07F87E /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MarvelHeroes/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88AEFFE5E5C1EA797F6D3F55 /* libPods-MarvelHeroes-MarvelHeroesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelHeroes-MarvelHeroesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C68592A018749F0BF910F84 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		90B2F667B854218720F5A1BE /* Pods-MarvelHeroes-MarvelHeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroes-MarvelHeroesTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelHeroes-MarvelHeroesTests/Pods-MarvelHeroes-MarvelHeroesTests.release.xcconfig"; sourceTree = "<group>"; };
+		942DC7AD3DB04B4E83FE3077 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		9580E9D90AB34759AD0F804D /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		B4182E4282B5FDB32AAE77CE /* libPods-MarvelHeroes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarvelHeroes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7A5DCEFD37344E5B299BC71 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		BA12A3632387479AB790B574 /* AvenirLTStd-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Medium.otf"; path = "../src/assets/fonts/AvenirLTStd-Medium.otf"; sourceTree = "<group>"; };
+		BE34135F08BA4FB6A49C38DF /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		C83BFDB377764A5BB4A50149 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		CBF7489D6EF34C079E9EB484 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		ED56F3B9DF004C0C9B458CD9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		EF693A51A44B4A9B87FC92F6 /* Pods-MarvelHeroes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroes.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHeroes/Pods-MarvelHeroes.debug.xcconfig"; sourceTree = "<group>"; };
+		F7652B32610C4936A91D825A /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		F7DB315F42E849989E11D7BE /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +175,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				976E9CB10C4761C8E25F8DEC /* Pods */,
+				B20BFDBDA75E44DAA67D261F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -178,8 +201,33 @@
 				05D3A026A880385D35705C9D /* Pods-MarvelHeroes-MarvelHeroesTests.debug.xcconfig */,
 				90B2F667B854218720F5A1BE /* Pods-MarvelHeroes-MarvelHeroesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B20BFDBDA75E44DAA67D261F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				40B13298307746EE9C670C35 /* AvenirLTStd-Book.otf */,
+				BA12A3632387479AB790B574 /* AvenirLTStd-Medium.otf */,
+				348631DCE0BF4C2CA328FE97 /* AvenirLTStd-Roman.otf */,
+				BE34135F08BA4FB6A49C38DF /* AntDesign.ttf */,
+				73177973E563416B9A07F87E /* Entypo.ttf */,
+				F7DB315F42E849989E11D7BE /* EvilIcons.ttf */,
+				942DC7AD3DB04B4E83FE3077 /* Feather.ttf */,
+				F7652B32610C4936A91D825A /* FontAwesome.ttf */,
+				ED56F3B9DF004C0C9B458CD9 /* FontAwesome5_Brands.ttf */,
+				8C68592A018749F0BF910F84 /* FontAwesome5_Regular.ttf */,
+				1E684C8819714515BC0D9C96 /* FontAwesome5_Solid.ttf */,
+				322FF7E8129847ED9E379C92 /* Fontisto.ttf */,
+				6CA764EEFD5841BCB595E316 /* Foundation.ttf */,
+				9580E9D90AB34759AD0F804D /* Ionicons.ttf */,
+				B7A5DCEFD37344E5B299BC71 /* MaterialCommunityIcons.ttf */,
+				CBF7489D6EF34C079E9EB484 /* MaterialIcons.ttf */,
+				C83BFDB377764A5BB4A50149 /* Octicons.ttf */,
+				19561FDB420C40DEB56DC2ED /* SimpleLineIcons.ttf */,
+				1F46EE91B86E4481BDD22D8A /* Zocial.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +324,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = WMQGXUB8B8;
 						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -322,6 +371,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794B4AF824F93B93008FCF61 /* AvenirLTStd-Book.otf in Resources */,
+				794B4AF924F93B93008FCF61 /* AvenirLTStd-Medium.otf in Resources */,
+				794B4AFA24F93B93008FCF61 /* AvenirLTStd-Roman.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
@@ -658,6 +710,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WMQGXUB8B8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MarvelHeroes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -666,7 +719,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.chalenge.MarvelHeroes;
 				PRODUCT_NAME = MarvelHeroes;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -681,6 +734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WMQGXUB8B8;
 				INFOPLIST_FILE = MarvelHeroes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -688,7 +742,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.chalenge.MarvelHeroes;
 				PRODUCT_NAME = MarvelHeroes;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
