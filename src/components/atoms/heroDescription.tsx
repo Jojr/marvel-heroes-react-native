@@ -2,30 +2,32 @@ import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { Spacing, Colors, Typography } from '../../styles';
 
-interface HeroNameProps {
+interface HeroDescriptionProps {
   children: any;
 }
 
-export const HeroName: React.FC<HeroNameProps> = ({ children }) => {
+export const HeroDescription: React.FC<HeroDescriptionProps> = ({
+  children,
+}) => {
   return (
-    <Text numberOfLines={2} ellipsizeMode="tail" style={styles.heroName}>
+    <Text style={styles.description}>
       {children}
     </Text>
   );
 };
 
 const styles = StyleSheet.create({
-  heroName: {
+  description: {
     flex: 1,
-    height: Spacing.SCALE_70,
+    width: '100%',
     fontFamily: Typography.FONT_FAMILY_BOLD,
-    fontSize: Typography.FONT_SIZE_18,
-    letterSpacing: -1,
+    fontSize: Typography.FONT_SIZE_20,
+    lineHeight: Spacing.SCALE_26,
+    letterSpacing: 1,
     color: Colors.WHITE,
     fontWeight: Typography.FONT_WEIGHT_BOLD,
     textAlignVertical: 'center',
-    textTransform: 'uppercase',
-    padding: Spacing.SCALE_10,
-    //paddingBottom: Spacing.SCALE_26,
+    padding: Spacing.SCALE_16,
+    paddingTop: 0,
   },
 });

@@ -34,10 +34,10 @@ export const Button: React.FC<ButtonProps> = ({
 const styles = StyleSheet.create({
   button: {
     //width: '100%',
+    height: Spacing.SCALE_30,
     flexDirection: 'row',
     backgroundColor: Colors.GRAY_DARKEST,
     borderRadius: Spacing.SCALE_6,
-    padding: Spacing.SCALE_6,
     paddingLeft: Spacing.SCALE_12,
     paddingRight: Spacing.SCALE_12,
     alignItems: 'center',

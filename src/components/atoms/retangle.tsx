@@ -12,12 +12,11 @@ export const Retangle: React.FC<RetangleProps> = ({ children }) => {
 
 const styles = StyleSheet.create({
   retangle: {
-    //width: '100%',
+    flex: 1,
     backgroundColor: Colors.BLACK,
     borderBottomRightRadius: Spacing.SCALE_18,
     paddingTop: Spacing.SCALE_26,
     paddingBottom: Spacing.SCALE_30,
     alignItems: 'center',
-    //justifyContent: 'center',
   },
 });

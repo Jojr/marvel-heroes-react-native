@@ -7,17 +7,21 @@ import {
   HeaderStyleInterpolators,
 } from 'react-navigation-stack';
 import Home, { navigationOptions } from '../scenes/Home';
+import Detail, { detailNavigationOptions } from '../scenes/Detail';
 
 const stackNavigator = createSharedElementStackNavigator(
   {
     Home: {
       screen: Home,
-      navigationOptions: navigationOptions,
+      //navigationOptions: navigationOptions,
+    },
+    Detail: {
+      screen: Detail,
+      navigationOptions: detailNavigationOptions,
     },
   },
   {
     initialRouteName: 'Home',
-    /* The header config from HomeScreen is now here */
     defaultNavigationOptions: {
       gestureEnabled: true,
       cardOverlayEnabled: true,
@@ -30,7 +34,7 @@ const stackNavigator = createSharedElementStackNavigator(
       headerTitleStyle: {
         fontWeight: 'bold',
       },
-      //...TransitionPresets.FadeFromBottomAndroid,
+      ...TransitionPresets.FadeFromBottomAndroid,
     },
   },
 );
