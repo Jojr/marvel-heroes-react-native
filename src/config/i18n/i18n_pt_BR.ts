@@ -1,7 +1,6 @@
 const portuguese = {
   pt_BR: {
-    /* Login */
-    'Enter': 'Entrar',
+    Favorite: 'Favorito',
   },
 };
 

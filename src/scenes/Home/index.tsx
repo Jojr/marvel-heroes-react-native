@@ -11,21 +11,16 @@ import {
   TouchableOpacity,
   Animated,
 } from 'react-native';
+import { I18n } from '@aws-amplify/core';
 import { SharedElement } from 'react-navigation-shared-element';
-import * as Animatable from 'react-native-animatable';
 import { Transition, Transitioning } from 'react-native-reanimated';
-import Icon from 'react-native-vector-icons/Feather';
-Icon.loadFont();
 import { Typography, Spacing, Colors } from '../../styles';
 import { loadHeroesRequest } from '../../redux/actions/heroes';
+import { Background, Container } from '../../components/organisms';
+import { Heroes } from '../../redux/actions/heroes/types';
 
-interface Car {
-  props: any;
-  doAnimation: number;
-  setDoAnimation: number;
-  password: string;
-  email: string;
-}
+import { Button, Retangle, HeroName, HeroImage } from '../../components/atoms';
+import { HeroCard } from '../../components/molecules';
 
 export function navigationOptions({ navigation }) {
   return {
@@ -35,52 +30,61 @@ export function navigationOptions({ navigation }) {
 
 const Home: React.FC = (props) => {
   const dispatch = useDispatch();
+  const { heroes } = useSelector<any>((state) => state.heroes);
   const [offset, setOffset] = useState<number>(0);
+  console.log('dataFromReducer');
+  console.log(heroes);
 
   useEffect(() => {
     dispatch(loadHeroesRequest(offset));
   }, [dispatch, offset]);
 
   return (
-    <>
-      <StatusBar barStyle="light-content" />
-      <SafeAreaView style={styles.container}>
-        <SharedElement id="menu-icon">
-          <Text style={styles.headerText}>AMG</Text>
-        </SharedElement>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate('Detail')}
-          activeOpacity={1}>
-          <SharedElement id="car-photo">
-            <Text>LALALLALA</Text>
-          </SharedElement>
-        </TouchableOpacity>
-      </SafeAreaView>
-    </>
+    <Background>
+      <StatusBar barStyle="light-content" backgroundColor={Colors.BLACK} />
+      <Container>
+        <View style={{ flexDirection: 'row'}}>
+          <HeroCard
+            onPress={() => console.log('pressed')}
+            name={`Nome do Herói`}
+            imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
+            favorite={true}
+            favoriteOnpress={() => console.log('Favorite pressed')}
+          />
+          <HeroCard
+            onPress={() => console.log('pressed')}
+            name={`Nome do Herói`}
+            imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
+            favorite={false}
+            favoriteOnpress={() => console.log('Favorite pressed')}
+          />
+        </View>
+        <View style={{ flexDirection: 'row'}}>
+          <HeroCard
+            onPress={() => console.log('pressed')}
+            name={`Nome do Herói`}
+            imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
+            favorite={true}
+            favoriteOnpress={() => console.log('Favorite pressed')}
+          />
+          <HeroCard
+            onPress={() => console.log('pressed')}
+            name={`Nome do Herói`}
+            imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
+            favorite={false}
+            favoriteOnpress={() => console.log('Favorite pressed')}
+          />
+        </View>
+        <HeroCard
+          onPress={() => console.log('pressed')}
+          name={`Nome do Herói`}
+          imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
+          favorite={true}
+          favoriteOnpress={() => console.log('Favorite pressed')}
+        />
+      </Container>
+    </Background>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    //padding: Spacing.SCALE_20,
-  },
-  header: {
-    paddingLeft: Spacing.SCALE_20,
-  },
-  headerText: {
-    color: Colors.WHITE,
-    fontSize: Typography.FONT_SIZE_30,
-    padding: Spacing.SCALE_20,
-    //fontFamily: Typography.FONT_FAMILY_BOLD,
-  },
-  carImage: {
-    marginTop: '30%',
-    width: '260%',
-    height: '75%',
-    marginLeft: -170,
-  },
-});
 
 export default Home;

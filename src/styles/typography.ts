@@ -1,10 +1,10 @@
 import { scaleFont } from './mixins';
 
 // FONT FAMILY
-export const FONT_FAMILY_THIN = 'Montserrat-Thin';
-export const FONT_FAMILY_LIGHT = 'Montserrat-Light';
-export const FONT_FAMILY_REGULAR = 'Montserrat-Regular';
-export const FONT_FAMILY_BOLD = 'Montserrat-Bold';
+export const FONT_FAMILY_THIN = 'AvenirLTStd-Book';
+export const FONT_FAMILY_LIGHT = 'AvenirLTStd-Book';
+export const FONT_FAMILY_REGULAR = 'AvenirLTStd-Medium';
+export const FONT_FAMILY_BOLD = 'AvenirLTStd-Roman';
 
 // FONT WEIGHT
 export const FONT_WEIGHT_THIN = '100';

@@ -16,7 +16,11 @@ export const ALERT = '#E66330';
 export const GRAY_LIGHT = '#FAFAFA';
 export const GRAY_MEDIUM = '#BAB9B9';
 export const GRAY_DARK = '#727171';
+export const GRAY_DARKEST = '#4A4A4A';
 
 /* Background */
 //export const BACKGROUND_PATH = require('../assets/images/BackGroundImage.png');
 export const GRADIENT_PRIMARY = ['#E62429', '#FF4249', '#990C11'];
+
+// BUTTON DEFAULTS
+export const BUTTON_TOUCH_OPACITY = 0.8;
