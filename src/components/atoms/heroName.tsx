@@ -16,6 +16,7 @@ export const HeroName: React.FC<HeroNameProps> = ({ children }) => {
 
 const styles = StyleSheet.create({
   heroName: {
+    height: Spacing.SCALE_70,
     fontFamily: Typography.FONT_FAMILY_BOLD,
     fontSize: Typography.FONT_SIZE_20,
     letterSpacing: -1,
@@ -24,6 +25,6 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     textTransform: 'uppercase',
     padding: Spacing.SCALE_10,
-    paddingBottom: Spacing.SCALE_26,
+    //paddingBottom: Spacing.SCALE_26,
   },
 });

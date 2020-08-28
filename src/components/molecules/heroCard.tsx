@@ -16,6 +16,7 @@ interface HeroCardProps {
 export const HeroCard: React.FC<HeroCardProps> = ({
   imageSource,
   favorite,
+  name,
   onPress,
   favoriteOnpress,
 }) => {
@@ -26,7 +27,7 @@ export const HeroCard: React.FC<HeroCardProps> = ({
       style={styles.container}>
       <HeroImage source={imageSource} />
       <Retangle>
-        <HeroName>{I18n.get('Hero Name')}</HeroName>
+        <HeroName>{name}</HeroName>
         <Button active={favorite} onPress={favoriteOnpress}>
           {I18n.get('Favorite')}
         </Button>
@@ -37,10 +38,10 @@ export const HeroCard: React.FC<HeroCardProps> = ({
 
 const styles = StyleSheet.create({
   container: {
+    flex: 0.5,
     flexGrow: 1,
-    //width: Spacing.SCALE_160,
+    width: Spacing.SCALE_160,
     borderRadius: Spacing.SCALE_6,
-    //margin: Spacing.SCALE_10,
     padding: Spacing.SCALE_5,
     marginBottom: Spacing.SCALE_10,
   },

@@ -10,6 +10,7 @@ import {
   Image,
   TouchableOpacity,
   Animated,
+  FlatList,
 } from 'react-native';
 import { I18n } from '@aws-amplify/core';
 import { SharedElement } from 'react-navigation-shared-element';
@@ -39,48 +40,31 @@ const Home: React.FC = (props) => {
     dispatch(loadHeroesRequest(offset));
   }, [dispatch, offset]);
 
+  const renderItem = (item: Heroes) => {
+    console.log('item')
+    console.log(item)
+    return (
+      <HeroCard
+        onPress={() => console.log('pressed')}
+        name={item.name}
+        //imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
+        imageSource={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+        favorite={true}
+        favoriteOnpress={() => console.log('Favorite pressed')}
+      />
+    );
+  };
+
   return (
     <Background>
       <StatusBar barStyle="light-content" backgroundColor={Colors.BLACK} />
       <Container>
-        <View style={{ flexDirection: 'row'}}>
-          <HeroCard
-            onPress={() => console.log('pressed')}
-            name={`Nome do Herói`}
-            imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
-            favorite={true}
-            favoriteOnpress={() => console.log('Favorite pressed')}
-          />
-          <HeroCard
-            onPress={() => console.log('pressed')}
-            name={`Nome do Herói`}
-            imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
-            favorite={false}
-            favoriteOnpress={() => console.log('Favorite pressed')}
-          />
-        </View>
-        <View style={{ flexDirection: 'row'}}>
-          <HeroCard
-            onPress={() => console.log('pressed')}
-            name={`Nome do Herói`}
-            imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
-            favorite={true}
-            favoriteOnpress={() => console.log('Favorite pressed')}
-          />
-          <HeroCard
-            onPress={() => console.log('pressed')}
-            name={`Nome do Herói`}
-            imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
-            favorite={false}
-            favoriteOnpress={() => console.log('Favorite pressed')}
-          />
-        </View>
-        <HeroCard
-          onPress={() => console.log('pressed')}
-          name={`Nome do Herói`}
-          imageSource={`http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg`}
-          favorite={true}
-          favoriteOnpress={() => console.log('Favorite pressed')}
+        <FlatList
+          //columnWrapperStyle={{ justifyContent: 'space-between' }}
+          numColumns={2}
+          data={heroes[0]}
+          keyExtractor={({ id }) => id}
+          renderItem={({ item }) => renderItem(item)}
         />
       </Container>
     </Background>

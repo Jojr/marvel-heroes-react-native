@@ -13,6 +13,6 @@ export const Container: React.FC<ContainerProps> = ({ children }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: Spacing.SCALE_20,
+    margin: Spacing.SCALE_15,
   },
 });
