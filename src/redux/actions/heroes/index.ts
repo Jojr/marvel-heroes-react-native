@@ -19,6 +19,7 @@ export const loadHeroesSuccess = (payload: []): LoadHeroesSuccess => ({
 
 export const loadHeroesRequest = (offset: number): ThunkResult<any> => {
   return (dispatch, getState) => {
+    dispatch({ type: types.LOAD_REQUEST });
     heroService
       .loadHeroes(offset)
       .then((result: any) => {

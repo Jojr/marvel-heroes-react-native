@@ -11,6 +11,7 @@ export default (state = initialState, action: HeroesActionsType) => {
   switch (action.type) {
     case types.LOAD_REQUEST: {
       return {
+        ...state,
         loading: true,
         errorMessage: '',
       };
@@ -18,7 +19,7 @@ export default (state = initialState, action: HeroesActionsType) => {
     case types.LOAD_SUCCESS: {
       return {
         ...state,
-        heroes: [action.payload],
+        heroes: action.payload as [],
         loading: false,
         errorMessage: '',
       };
@@ -26,7 +27,7 @@ export default (state = initialState, action: HeroesActionsType) => {
     case types.LOAD_MORE_SUCCESS: {
       return {
         ...state,
-        heroes: [...state.heroes, action.payload],
+        heroes: [...state.heroes, ...(action.payload as [])],
         loading: false,
       };
     }
