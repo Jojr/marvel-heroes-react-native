@@ -26,8 +26,9 @@ const styles = StyleSheet.create({
   container: {
     paddingRight: Spacing.SCALE_12,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   icon: {
-    justifyContent: 'center',
+    height: Typography.FONT_SIZE_30,
   },
 });

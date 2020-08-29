@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { Spacing, Colors, Typography, Mixins } from '../../styles';
+import { Spacing, Colors, Typography } from '../../styles';
 
 interface ButtonProps {
   children?: any;
@@ -27,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <TouchableOpacity
       activeOpacity={Colors.BUTTON_TOUCH_OPACITY}
+      hitSlop={{ top: 10, bottom: 10, left: 5, right: 10 }}
       onPress={onPress}
       style={[
         styles.button,

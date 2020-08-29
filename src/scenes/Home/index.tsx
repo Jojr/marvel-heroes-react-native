@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StatusBar, FlatList } from 'react-native';
+import { View, StatusBar, FlatList } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import { Colors } from '../../styles';
 import { loadHeroesRequest } from '../../redux/actions/heroes';
@@ -37,7 +37,7 @@ const Home: React.FC = ({ navigation }) => {
   const searchByname = (name: string) => {
     console.log("Filter " + name);
     setFilterByName(name);
-    dispatch(loadHeroesRequest(offset, filterByName));
+    dispatch(loadHeroesRequest(0, filterByName));
     [];
   };
 
@@ -62,29 +62,32 @@ const Home: React.FC = ({ navigation }) => {
     <Background>
       <StatusBar barStyle="light-content" backgroundColor={Colors.BLACK} />
       <Container>
+        {/*<SearchBox
+          onPress={() => console.log('Pressed')}
+          value={filterByName}
+          placeholder="Buscar personagem Marvel"
+          onChangeText={searchByname}
+        />*/}
         <FlatList
           numColumns={2}
           data={heroes}
-          //data={filterByName.length > 0 ? filteredData : heroes}
           keyExtractor={({ id }) => id}
           renderItem={({ item }) => renderItem(item)}
           onRefresh={() => setOffset(0)}
           refreshing={loading}
           onEndReached={() => setOffset(offset + 20)}
           onEndReachedThreshold={0.5}
-          ListHeaderComponent={() => (
+          stickyHeaderIndices={[0]}
+          ListHeaderComponent={
             <SearchBox
               onPress={() => console.log('Pressed')}
               value={filterByName}
               placeholder="Buscar personagem Marvel"
-              /*onChangeText={(value: string) => {
-                setFilterByName(value);
-                console.log('value');
-                console.log(value);
-              }}*/
               onChangeText={searchByname}
             />
-          )}
+          }
+          style={{ backgroundColor: '#FFFFFF00', paddingTop: 0 }}
+          centerContent
         />
       </Container>
     </Background>

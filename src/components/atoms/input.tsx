@@ -26,7 +26,7 @@ export const Input: React.FC<InputProps> = ({
         value={value}
         placeholder={placeholder}
         placeholderTextColor={Colors.WHITE}
-        onChangeText={(value) => onChangeText(value)}
+        onChangeText={(e) => onChangeText(e)}
         style={styles.input}
         returnKeyType="search"
       />

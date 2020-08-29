@@ -39,12 +39,14 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.WHITE,
-    //backgroundColor: '#FF00FF',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    //borderBottomWidth: 1,
+    //borderBottomColor: Colors.WHITE,
     margin: Spacing.SCALE_10,
-    marginTop: Spacing.SCALE_50,
     marginBottom: Spacing.SCALE_50,
     paddingBottom: Spacing.SCALE_8,
+    paddingTop: Spacing.SCALE_8,
+    paddingLeft: Spacing.SCALE_8,
+    borderRadius: 20,
   },
 });
