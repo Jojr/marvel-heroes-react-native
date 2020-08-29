@@ -4,10 +4,14 @@ import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Spacing, Colors, Typography, Mixins } from '../../styles';
 
 interface ButtonProps {
-  children: any;
+  children?: any;
   onPress(): void;
   active?: boolean;
   icon?: string;
+  transparent?: boolean;
+  iconSize?: number;
+  iconColor?: string;
+  buttonColor?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -15,25 +19,33 @@ export const Button: React.FC<ButtonProps> = ({
   onPress,
   children,
   icon,
+  transparent,
+  iconSize,
+  iconColor,
+  buttonColor,
 }) => {
   return (
     <TouchableOpacity
       activeOpacity={Colors.BUTTON_TOUCH_OPACITY}
       onPress={onPress}
-      style={[styles.button, active ? styles.active : null]}>
+      style={[
+        styles.button,
+        active ? styles.active : null,
+        transparent ? styles.transparent : null,
+        buttonColor ? { backgroundColor: buttonColor } : null,
+      ]}>
       <Icon
-        name={icon || active ? 'check' : 'plus'}
-        size={Typography.FONT_SIZE_26}
-        color={Colors.WHITE}
+        name={icon ? icon : active ? 'check' : 'plus'}
+        size={iconSize || Typography.FONT_SIZE_26}
+        color={iconColor || Colors.WHITE}
       />
-      <Text style={styles.label}>{children}</Text>
+      {children ? <Text style={styles.label}>{children}</Text> : null}
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    //width: '100%',
     height: Spacing.SCALE_30,
     flexDirection: 'row',
     backgroundColor: Colors.GRAY_DARKEST,
@@ -42,6 +54,9 @@ const styles = StyleSheet.create({
     paddingRight: Spacing.SCALE_12,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  transparent: {
+    backgroundColor: Colors.TRANSPARENCY,
   },
   label: {
     fontFamily: Typography.FONT_FAMILY_REGULAR,

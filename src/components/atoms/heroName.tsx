@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     textTransform: 'uppercase',
     padding: Spacing.SCALE_10,
-    //paddingBottom: Spacing.SCALE_26,
+    marginRight: Spacing.SCALE_10,
   },
 });

@@ -9,11 +9,7 @@ interface HeroDescriptionProps {
 export const HeroDescription: React.FC<HeroDescriptionProps> = ({
   children,
 }) => {
-  return (
-    <Text style={styles.description}>
-      {children}
-    </Text>
-  );
+  return <Text style={styles.description}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({

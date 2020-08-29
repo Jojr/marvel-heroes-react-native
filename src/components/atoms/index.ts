@@ -5,3 +5,5 @@ export { HeroImage } from './heroImage';
 export { Row } from './row';
 export { HeroDescription } from './heroDescription';
 export { CircularButton } from './circularButton';
+export { Input } from './input';
+export { CustomIcon } from './customIcon';

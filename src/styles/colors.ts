@@ -3,7 +3,7 @@ export const SECONDARY = '#202020';
 export const WHITE = '#FFFFFF';
 export const BLACK = '#151515';
 export const GREEN = '#009928';
-export const TRANSPARENCY = 'rgba(230, 36, 41, 0.75)';
+export const TRANSPARENCY = 'rgba(255, 255, 255, 0)';
 export const TRANSPARENCY_PRIMARY = 'rgba(230, 36, 41, 0.70)';
 export const TRANSPARENCY_SECONDARY = 'rgba(32, 32, 32, 0.70)';
 
