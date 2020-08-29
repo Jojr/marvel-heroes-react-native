@@ -6,14 +6,14 @@ import {
   TransitionSpecs,
   HeaderStyleInterpolators,
 } from 'react-navigation-stack';
-import Home, { navigationOptions } from '../scenes/Home';
+import Home, { homeNavigationOptions } from '../scenes/Home';
 import Detail, { detailNavigationOptions } from '../scenes/Detail';
 
 const stackNavigator = createSharedElementStackNavigator(
   {
     Home: {
       screen: Home,
-      //navigationOptions: navigationOptions,
+      navigationOptions: homeNavigationOptions,
     },
     Detail: {
       screen: Detail,

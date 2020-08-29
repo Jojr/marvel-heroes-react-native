@@ -17,11 +17,14 @@ export const loadHeroesSuccess = (payload: []): LoadHeroesSuccess => ({
   payload,
 });
 
-export const loadHeroesRequest = (offset: number): ThunkResult<any> => {
+export const loadHeroesRequest = (
+  offset: number,
+  filterByName: string,
+): ThunkResult<any> => {
   return (dispatch, getState) => {
     dispatch({ type: types.LOAD_REQUEST });
     heroService
-      .loadHeroes(offset)
+      .loadHeroes(offset, filterByName)
       .then((result: any) => {
         const { data, error } = result;
         if (error) {
