@@ -1,4 +1,5 @@
 import { Action } from 'redux';
+import { RootState } from '../../reducers';
 
 export const LOAD_REQUEST = 'heroes/LOAD_REQUEST';
 export const LOAD_SUCCESS = 'heroes/LOAD_SUCCESS';
@@ -10,6 +11,11 @@ export interface Hero {
   name: string;
   description: string;
   thumbnail: Image;
+}
+
+export interface HeroesState {
+  state: RootState;
+  heroes: Array<Hero>;
 }
 
 export interface Image {

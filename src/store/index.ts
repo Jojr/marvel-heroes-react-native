@@ -3,12 +3,12 @@ import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import logger from 'redux-logger';
 import AsyncStorage from '@react-native-community/async-storage';
-import reducers from '../redux/reducers';
+import { rootReducer } from '../redux/reducers';
 
 const persistConfig: any = {
   key: 'marvelHeroes',
   storage: AsyncStorage,
-  whitelist: ['auth'],
+  whitelist: ['favorites'],
   blacklist: [],
   timeout: null,
 };
@@ -20,7 +20,7 @@ if (__DEV__) {
   middleware = [...middleware, thunk];
 }
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store: any = createStore(
   persistedReducer,

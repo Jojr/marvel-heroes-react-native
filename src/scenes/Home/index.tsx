@@ -3,8 +3,9 @@ import { RefreshControl, StatusBar, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { Colors } from '../../styles';
 import { loadHeroesRequest } from '../../redux/actions/heroes';
+import { addFavorite, removeFavorite } from '../../redux/actions/favorites';
 import { Background, Container } from '../../components/organisms';
-import { Hero } from '../../redux/actions/heroes/types';
+import { Hero, HeroesState } from '../../redux/actions/heroes/types';
 import { HeroCard, SearchBox } from '../../components/molecules';
 
 export function homeNavigationOptions<Props>() {
@@ -22,7 +23,8 @@ export function homeNavigationOptions<Props>() {
 
 const Home: React.FC = ({ navigation }) => {
   const dispatch = useDispatch();
-  const { heroes, loading } = useSelector((state) => state.heroes);
+  const { heroes, loading } = useSelector<HeroesState>((state) => state.heroes);
+  const { savedFavorites } = useSelector((state) => state.favorites);
   const [offset, setOffset] = useState<number>(0);
   const [filterByName, setFilterByName] = useState<string>('');
 
@@ -37,6 +39,16 @@ const Home: React.FC = ({ navigation }) => {
     [];
   };
 
+  const handleFavorite = (item: Hero) => {
+    const isFavorite = savedFavorites.findIndex((x: any) => x.id === item.id);
+    console.log(savedFavorites);
+    if (isFavorite >= 0) {
+      dispatch(removeFavorite(item));
+    } else {
+      dispatch(addFavorite(item));
+    }
+  };
+
   const renderItem = (item: Hero) => {
     return (
       <HeroCard
@@ -48,8 +60,12 @@ const Home: React.FC = ({ navigation }) => {
         uniqueId={item.id.toString()}
         name={item.name}
         imageSource={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-        favorite={true}
-        favoriteOnpress={() => console.log('Favorite pressed')}
+        favorite={
+          savedFavorites.findIndex((x: any) => x.id === item.id) >= 0
+            ? true
+            : false
+        }
+        favoriteOnpress={() => handleFavorite(item)}
       />
     );
   };
@@ -58,15 +74,8 @@ const Home: React.FC = ({ navigation }) => {
     <Background>
       <StatusBar barStyle="light-content" backgroundColor={Colors.BLACK} />
       <Container>
-        {/*<SearchBox
-          onPress={() => console.log('Pressed')}
-          value={filterByName}
-          placeholder="Buscar personagem Marvel"
-          onChangeText={searchByname}
-        />*/}
         <FlatList
           numColumns={2}
-          //columnWrapperStyle={{ justifyContent: 'flex-start' }}
           data={heroes}
           keyExtractor={({ id }) => id}
           renderItem={({ item }) => renderItem(item)}

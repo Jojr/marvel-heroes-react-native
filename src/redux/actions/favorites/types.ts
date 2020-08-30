@@ -1,9 +1,5 @@
-import { Action } from 'redux';
-
-export const LOAD_REQUEST = 'heroes/LOAD_REQUEST';
-export const LOAD_SUCCESS = 'heroes/LOAD_SUCCESS';
-export const LOAD_MORE_SUCCESS = 'heroes/LOAD_MORE_SUCCESS';
-export const LOAD_ERROR = 'heroes/LOAD_ERROR';
+export const ADD_FAVORITE = 'favorites/ADD_FAVORITE';
+export const REMOVE_FAVORITE = 'favorites/REMOVE_FAVORITE';
 
 export interface Hero {
   id: number;
@@ -17,46 +13,19 @@ export interface Image {
   extension: string;
 }
 
-export interface LoadingState {
-  heroes: boolean;
+export interface FavoriteStateType {
+  savedFavorites: Array<Hero>;
+  favorites?: Array<Hero>;
 }
 
-export interface HeroesStateType {
-  loading: boolean;
-  heroes: Array<Hero>;
-  errorMessage: string;
+export interface AddFavorite {
+  type: 'favorites/ADD_FAVORITE';
+  payload: Array<Hero>;
 }
 
-export interface LoadHeroesRequest extends Action {
-  type: 'heroes/LOAD_REQUEST';
-  payload: number;
+export interface RemoveFavorite {
+  type: 'favorites/REMOVE_FAVORITE';
+  payload: Array<Hero>;
 }
 
-export interface LoadHeroesSuccess extends Action {
-  type: 'heroes/LOAD_SUCCESS';
-  payload: Array<Hero> | number | string;
-}
-
-export interface LoadMoreHeroesSuccess extends Action {
-  type: 'heroes/LOAD_MORE_SUCCESS';
-  payload: Array<Hero> | number | string;
-}
-
-export interface LoadHeroesResult {
-  error: string | null;
-  data: Array<Hero>;
-  payload: Array<Hero> | number | string;
-  type: Array<Hero> | string | null;
-}
-
-export interface LoadHeroesError extends Action {
-  type: 'heroes/LOAD_ERROR';
-  payload: Array<Hero> | number | string;
-}
-
-export type HeroesActionsType =
-  | LoadHeroesRequest
-  | LoadHeroesSuccess
-  | LoadMoreHeroesSuccess
-  | LoadHeroesResult
-  | LoadHeroesError;
+export type FavoritesActionsType = AddFavorite | RemoveFavorite;
