@@ -28,7 +28,8 @@ export const Input: React.FC<InputProps> = ({
         placeholderTextColor={Colors.WHITE}
         onChangeText={(e) => onChangeText(e)}
         style={styles.input}
-        returnKeyType="search"
+        returnKeyType="done"
+        autoCorrect={false}
       />
     </View>
   );
@@ -39,14 +40,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.TRANSPARENCY,
     justifyContent: 'center',
-    paddingBottom: Spacing.SCALE_5,
   },
   input: {
     backgroundColor: Colors.TRANSPARENCY,
     width: '100%',
-    height: Spacing.SCALE_30,
     fontFamily: Typography.FONT_FAMILY_REGULAR,
-    fontSize: Typography.FONT_SIZE_22,
+    fontSize: Typography.FONT_SIZE_18,
     color: Colors.WHITE,
     fontWeight: Typography.FONT_WEIGHT_REGULAR,
     textAlignVertical: 'center',

@@ -13,6 +13,7 @@ export const Retangle: React.FC<RetangleProps> = ({ children }) => {
 const styles = StyleSheet.create({
   retangle: {
     flex: 1,
+    padding: Spacing.SCALE_8,
     backgroundColor: Colors.BLACK,
     borderBottomRightRadius: Spacing.SCALE_18,
     paddingTop: Spacing.SCALE_26,

@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 0.5,
     flexGrow: 1,
+    maxWidth: '50%',
     width: Spacing.SCALE_160,
     borderRadius: Spacing.SCALE_6,
     padding: Spacing.SCALE_6,

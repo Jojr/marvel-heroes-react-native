@@ -7,6 +7,7 @@ interface ContainerProps {
 }
 
 export const Container: React.FC<ContainerProps> = ({ children }) => {
+  //SafeAreaView produz uma quebra na transição fluida.
   return <View style={styles.container}>{children}</View>;
   //return <SafeAreaView style={styles.container}>{children}</SafeAreaView>;
 };
