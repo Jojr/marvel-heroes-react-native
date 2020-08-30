@@ -25,7 +25,7 @@ const setLanguage = () => {
 
 const App: React.FC = () => {
   setLanguage();
-  persistor.purge(); //Para limpar a store
+  //persistor.purge(); //Para limpar a store
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
