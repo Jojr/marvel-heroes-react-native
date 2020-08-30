@@ -8,7 +8,7 @@ interface SearchBoxProps {
   value: string;
   placeholder: string;
   onChangeText: any;
-  onPress(): ViewPropsIOS;
+  onPress: any;
 }
 
 export const SearchBox: React.FC<SearchBoxProps> = ({
@@ -26,9 +26,9 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
         onChangeText={onChangeText}
       />
       <Button
-        onPress={onPress}
-        icon="chevron-right"
-        iconSize={Spacing.SCALE_30}
+        onPress={() => onPress('')}
+        icon="close"
+        iconSize={Spacing.SCALE_24}
         iconColor={Colors.WHITE}
         //buttonColor={Colors.PRIMARY}
         transparent

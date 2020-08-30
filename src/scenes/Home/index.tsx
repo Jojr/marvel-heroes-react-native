@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, StatusBar, FlatList } from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
+import { RefreshControl, StatusBar, FlatList } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import { Colors } from '../../styles';
 import { loadHeroesRequest } from '../../redux/actions/heroes';
 import { Background, Container } from '../../components/organisms';
 import { Hero } from '../../redux/actions/heroes/types';
 import { HeroCard, SearchBox } from '../../components/molecules';
-
-import { Input } from '../../components/atoms';
 
 export function homeNavigationOptions<Props>() {
   return {
@@ -27,16 +25,14 @@ const Home: React.FC = ({ navigation }) => {
   const { heroes, loading } = useSelector((state) => state.heroes);
   const [offset, setOffset] = useState<number>(0);
   const [filterByName, setFilterByName] = useState<string>('');
-  console.log('filterByName')
-  console.log(filterByName)
 
   useEffect(() => {
     dispatch(loadHeroesRequest(offset, filterByName));
   }, [dispatch, offset, filterByName]);
 
   const searchByname = (name: string) => {
-    console.log("Filter " + name);
     setFilterByName(name);
+    setOffset(0);
     dispatch(loadHeroesRequest(0, filterByName));
     [];
   };
@@ -70,24 +66,31 @@ const Home: React.FC = ({ navigation }) => {
         />*/}
         <FlatList
           numColumns={2}
+          //columnWrapperStyle={{ justifyContent: 'flex-start' }}
           data={heroes}
           keyExtractor={({ id }) => id}
           renderItem={({ item }) => renderItem(item)}
-          onRefresh={() => setOffset(0)}
-          refreshing={loading}
           onEndReached={() => setOffset(offset + 20)}
           onEndReachedThreshold={0.5}
           stickyHeaderIndices={[0]}
+          refreshControl={
+            <RefreshControl
+              refreshing={false}
+              onRefresh={() => setOffset(0)}
+              title="Deslize para atualizar"
+              tintColor={Colors.WHITE}
+              titleColor={Colors.WHITE}
+            />
+          }
           ListHeaderComponent={
             <SearchBox
-              onPress={() => console.log('Pressed')}
+              onPress={setFilterByName}
               value={filterByName}
               placeholder="Buscar personagem Marvel"
               onChangeText={searchByname}
             />
           }
-          style={{ backgroundColor: '#FFFFFF00', paddingTop: 0 }}
-          centerContent
+          contentContainerStyle={{ flexGrow: 1, justifyContent: 'flex-start' }}
         />
       </Container>
     </Background>
