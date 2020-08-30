@@ -13,7 +13,6 @@ export default (state = initialState, action: FavoritesActionsType) => {
     case types.ADD_FAVORITE: {
       return {
         ...state,
-        //savedFavorites: [...state.savedFavorites, ...(action.payload as [])],
         savedFavorites: [...state.savedFavorites, action.payload],
       };
     }
@@ -26,16 +25,6 @@ export default (state = initialState, action: FavoritesActionsType) => {
           ...state.savedFavorites.slice(0, foundIndex),
           ...state.savedFavorites.slice(foundIndex + 1),
         ],
-      };
-    }
-    case types.DELETE_POST: {
-      const { foundIndex } = action.payload;
-      return {
-        ...state,
-        postsList: [
-          ...state.postsList.slice(0, foundIndex),
-          ...state.postsList.slice(foundIndex + 1)
-        ]
       };
     }
     default:

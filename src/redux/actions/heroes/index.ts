@@ -1,13 +1,6 @@
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import * as types from './types';
-import {
-  LoadHeroesRequest,
-  LoadHeroesSuccess,
-  LoadMoreHeroesSuccess,
-  LoadHeroesError,
-  HeroesStateType,
-  HeroesActionsType,
-} from './types';
+import { LoadHeroesSuccess, HeroesStateType } from './types';
 import * as heroService from '../../../services/heroes';
 
 type ThunkResult<R> = ThunkAction<R, HeroesStateType, undefined, any>;
@@ -21,7 +14,7 @@ export const loadHeroesRequest = (
   offset: number,
   filterByName: string,
 ): ThunkResult<any> => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch({ type: types.LOAD_REQUEST });
     heroService
       .loadHeroes(offset, filterByName)
