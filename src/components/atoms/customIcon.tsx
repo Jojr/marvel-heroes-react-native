@@ -6,7 +6,6 @@ import { Spacing, Colors, Typography } from '../../styles';
 interface CustomIconProps {
   name: string;
   color?: string;
-  size: number;
 }
 
 export const CustomIcon: React.FC<CustomIconProps> = ({ name, color }) => {
@@ -24,7 +23,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({ name, color }) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingRight: Spacing.SCALE_12,
+    //paddingRight: Spacing.SCALE_12,
     alignItems: 'center',
     justifyContent: 'center',
   },
