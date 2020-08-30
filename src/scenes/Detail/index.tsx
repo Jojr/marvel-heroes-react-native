@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { StatusBar } from 'react-native';
 import { Colors } from '../../styles';
-import { loadHeroesRequest } from '../../redux/actions/heroes';
+import { addFavorite, removeFavorite } from '../../redux/actions/favorites';
 import { Background, Container } from '../../components/organisms';
-import { Heroes } from '../../redux/actions/heroes/types';
+import { Hero } from '../../redux/actions/heroes/types';
 import { HeroDetail } from '../../components/molecules';
 
 export function detailNavigationOptions({ navigation }) {
@@ -15,10 +15,18 @@ export function detailNavigationOptions({ navigation }) {
 
 const Detail: React.FC = ({ navigation }) => {
   const item = navigation.getParam('itemId');
-  console.log(item)
   const dispatch = useDispatch();
-  const { heroes, loading } = useSelector<any>((state) => state.heroes);
-  const [offset, setOffset] = useState<number>(0);
+  const { savedFavorites } = useSelector((state) => state.favorites);
+
+  const handleFavorite = (item: Hero) => {
+    const isFavorite = savedFavorites.findIndex((x: any) => x.id === item.id);
+    console.log(savedFavorites);
+    if (isFavorite >= 0) {
+      dispatch(removeFavorite(item));
+    } else {
+      dispatch(addFavorite(item));
+    }
+  };
 
   return (
     <Background>
@@ -29,9 +37,13 @@ const Detail: React.FC = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           name={item.name}
           imageSource={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-          favorite={true}
+          favorite={
+            savedFavorites.findIndex((x: any) => x.id === item.id) >= 0
+              ? true
+              : false
+          }
           description={item.description}
-          favoriteOnpress={() => console.log('Favorite pressed')}
+          favoriteOnpress={() => handleFavorite(item)}
         />
       </Container>
     </Background>
