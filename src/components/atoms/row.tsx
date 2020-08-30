@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 
 interface RowProps {
   children: any;
-  style: object;
+  style?: object;
 }
 
 export const Row: React.FC<RowProps> = ({ children, style }) => {

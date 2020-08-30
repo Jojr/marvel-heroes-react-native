@@ -1,14 +1,8 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
-import {
-  TransitionPresets,
-  TransitionSpecs,
-  HeaderStyleInterpolators,
-} from 'react-navigation-stack';
+import { TransitionPresets } from 'react-navigation-stack';
 import Home, { homeNavigationOptions } from '../scenes/Home';
 import Detail, { detailNavigationOptions } from '../scenes/Detail';
 import Favorites, { favoritesNavigationOptions } from '../scenes/Favorites';

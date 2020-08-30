@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, ScrollView, TouchableOpacity, StyleSheet, ViewPropsIOS } from 'react-native';
-import { I18n } from '@aws-amplify/core';
-import { Spacing, Colors, Mixins } from '../../styles';
+import { StyleSheet } from 'react-native';
+import { Spacing, Colors } from '../../styles';
 import { Input, CustomIcon, Row, Button } from '../atoms';
 
 interface SearchBoxProps {
@@ -28,7 +27,7 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
       <Button
         onPress={() => onPress('')}
         icon="close"
-        iconSize={Spacing.SCALE_24}
+        iconSize={Spacing.SCALE_20}
         iconColor={Colors.WHITE}
         //buttonColor={Colors.PRIMARY}
         transparent
@@ -40,8 +39,6 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'rgba(0,0,0,0.5)',
-    //borderBottomWidth: 1,
-    //borderBottomColor: Colors.WHITE,
     margin: Spacing.SCALE_10,
     marginBottom: Spacing.SCALE_50,
     paddingBottom: Spacing.SCALE_8,

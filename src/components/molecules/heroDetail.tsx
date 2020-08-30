@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import { I18n } from '@aws-amplify/core';
-import { Spacing, Colors, Mixins } from '../../styles';
+import { Spacing } from '../../styles';
 import {
   Button,
   Retangle,

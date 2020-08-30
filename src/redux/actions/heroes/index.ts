@@ -1,4 +1,4 @@
-import { ThunkAction, ThunkDispatch } from 'redux-thunk';
+import { ThunkAction } from 'redux-thunk';
 import * as types from './types';
 import { LoadHeroesSuccess, HeroesStateType } from './types';
 import * as heroService from '../../../services/heroes';

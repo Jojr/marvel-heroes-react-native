@@ -20,7 +20,6 @@ export default (state = initialState, action: FavoritesActionsType) => {
       const { foundIndex } = action.payload;
       return {
         ...state,
-        //saved: [...state.saved, ...(action.payload as [])],
         savedFavorites: [
           ...state.savedFavorites.slice(0, foundIndex),
           ...state.savedFavorites.slice(foundIndex + 1),

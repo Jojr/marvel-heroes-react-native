@@ -6,6 +6,7 @@ import { Spacing, Colors, Typography } from '../../styles';
 interface CustomIconProps {
   name: string;
   color?: string;
+  size?: number;
 }
 
 export const CustomIcon: React.FC<CustomIconProps> = ({ name, color }) => {
