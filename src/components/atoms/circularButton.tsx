@@ -10,18 +10,18 @@ interface CircularButtonProps {
 export const CircularButton: React.FC<CircularButtonProps> = ({ onPress }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.button}>
-      <Icon name="close" size={Typography.FONT_SIZE_50} color={Colors.WHITE} />
+      <Icon name="close" size={Typography.FONT_SIZE_40} color={Colors.WHITE} />
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    width: Spacing.SCALE_80,
-    height: Spacing.SCALE_80,
+    width: Spacing.SCALE_60,
+    height: Spacing.SCALE_60,
     position: 'absolute',
-    bottom: Spacing.SCALE_30,
-    right: Spacing.SCALE_15,
+    bottom: Spacing.SCALE_10,
+    right: Spacing.SCALE_5,
     backgroundColor: Colors.PRIMARY,
     borderRadius: Spacing.SCALE_40,
     paddingLeft: Spacing.SCALE_12,

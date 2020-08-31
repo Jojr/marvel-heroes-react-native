@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { View, StyleSheet } from 'react-native';
-import { Spacing, Colors, Typography } from '../../styles';
+import { Colors, Typography } from '../../styles';
 
 interface CustomIconProps {
   name: string;
@@ -24,7 +24,6 @@ export const CustomIcon: React.FC<CustomIconProps> = ({ name, color }) => {
 
 const styles = StyleSheet.create({
   container: {
-    //paddingRight: Spacing.SCALE_12,
     alignItems: 'center',
     justifyContent: 'center',
   },
