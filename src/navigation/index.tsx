@@ -104,11 +104,12 @@ const MainTabs = createBottomTabNavigator(
       
     }),
     tabBarOptions: {
-      activeTintColor: Colors.PRIMARY,
-      inactiveTintColor: 'gray',
-      labelStyle: { fontSize: 14 },
+      activeTintColor: Colors.WHITE,
+      inactiveTintColor: Colors.GRAY_DARK,
+      labelStyle: { fontSize: Typography.FONT_SIZE_12 },
       style: {
-        backgroundColor: '#000',
+        backgroundColor: Colors.BLACK,
+        borderTopWidth: 0,
         //paddingTop: 20,
       },
     },
