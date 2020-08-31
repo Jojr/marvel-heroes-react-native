@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     fontWeight: Typography.FONT_WEIGHT_BOLD,
     textAlignVertical: 'center',
     textTransform: 'uppercase',
+    margin: Spacing.SCALE_10,
   },
   description: {
     fontFamily: Typography.FONT_FAMILY_LIGHT,

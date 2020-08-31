@@ -82,7 +82,10 @@ const Favorites: React.FC = ({ navigation }) => {
           onEndReached={() => setOffset(offset + 20)}
           onEndReachedThreshold={0.5}
           ListEmptyComponent={() => (
-            <Warning title="Empty list" description="Your list is empty" />
+            <Warning
+              title="List is empty"
+              description="Add your heroes to your favorites"
+            />
           )}
           contentContainerStyle={{ flexGrow: 1, justifyContent: 'flex-start' }}
         />

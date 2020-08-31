@@ -92,7 +92,7 @@ const Home: React.FC = ({ navigation }) => {
           )}
           refreshControl={
             <RefreshControl
-              refreshing={false}
+              refreshing={loading}
               onRefresh={() => setOffset(0)}
               title="Deslize para atualizar"
               tintColor={Colors.WHITE}
@@ -101,7 +101,6 @@ const Home: React.FC = ({ navigation }) => {
           }
           ListHeaderComponent={
             <SearchBox
-              //onPress={setFilterByName}
               onPress={resetSearch}
               value={filterByName}
               placeholder="Buscar personagem Marvel"
