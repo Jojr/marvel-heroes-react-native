@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Spacing, Colors } from '../../styles';
-import { Input, CustomIcon, Row, Button } from '../atoms';
+import { Input, CustomIcon, Row, Button, BrandIcon } from '../atoms';
 
 interface SearchBoxProps {
   value: string;
@@ -18,32 +18,40 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
 }) => {
   return (
     <Row style={styles.container}>
-      <CustomIcon name="magnify" size={Spacing.SCALE_16} />
-      <Input
-        value={value}
-        placeholder={placeholder}
-        onChangeText={onChangeText}
-      />
-      <Button
-        onPress={() => onPress('')}
-        icon="close"
-        iconSize={Spacing.SCALE_20}
-        iconColor={Colors.WHITE}
-        //buttonColor={Colors.PRIMARY}
-        transparent
-      />
+      <BrandIcon style={styles.brand} />
+      <Row style={styles.searchArea}>
+        <CustomIcon name="magnify" size={Spacing.SCALE_16} />
+        <Input
+          value={value}
+          placeholder={placeholder}
+          onChangeText={onChangeText}
+        />
+        <Button
+          onPress={() => onPress('')}
+          icon="close"
+          iconSize={Spacing.SCALE_20}
+          iconColor={Colors.WHITE}
+          //buttonColor={Colors.PRIMARY}
+          transparent
+        />
+      </Row>
     </Row>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: Spacing.SCALE_10,
+    marginBottom: Spacing.SCALE_30,
+    justifyContent: 'center',
+  },
+  searchArea: {
+    flex: 1,
     backgroundColor: 'rgba(0,0,0,0.5)',
-    margin: Spacing.SCALE_10,
-    marginBottom: Spacing.SCALE_50,
-    paddingBottom: Spacing.SCALE_8,
-    paddingTop: Spacing.SCALE_8,
     paddingLeft: Spacing.SCALE_8,
     borderRadius: 20,
+  },
+  brand: {
+    marginRight: Spacing.SCALE_10,
   },
 });
