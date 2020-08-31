@@ -8,6 +8,7 @@ interface SearchBoxProps {
   placeholder: string;
   onChangeText: any;
   onPress: any;
+  showCloseButton: boolean;
 }
 
 export const SearchBox: React.FC<SearchBoxProps> = ({
@@ -15,6 +16,7 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
   placeholder,
   onChangeText,
   onPress,
+  showCloseButton,
 }) => {
   return (
     <Row style={styles.container}>
@@ -26,14 +28,16 @@ export const SearchBox: React.FC<SearchBoxProps> = ({
           placeholder={placeholder}
           onChangeText={onChangeText}
         />
-        <Button
-          onPress={() => onPress('')}
-          icon="close"
-          iconSize={Spacing.SCALE_20}
-          iconColor={Colors.WHITE}
-          //buttonColor={Colors.PRIMARY}
-          transparent
-        />
+        {showCloseButton && (
+          <Button
+            onPress={() => onPress()}
+            icon="close"
+            iconSize={Spacing.SCALE_20}
+            iconColor={Colors.WHITE}
+            //buttonColor={Colors.PRIMARY}
+            transparent
+          />
+        )}
       </Row>
     </Row>
   );
@@ -52,6 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   brand: {
+    marginLeft: Spacing.SCALE_10,
     marginRight: Spacing.SCALE_10,
   },
 });

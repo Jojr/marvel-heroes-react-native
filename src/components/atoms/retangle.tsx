@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     padding: Spacing.SCALE_8,
     backgroundColor: Colors.BLACK,
     borderBottomRightRadius: Spacing.SCALE_18,
-    paddingTop: Spacing.SCALE_26,
-    paddingBottom: Spacing.SCALE_30,
+    //paddingTop: Spacing.SCALE_26,
+    paddingBottom: Spacing.SCALE_20,
     alignItems: 'center',
   },
 });

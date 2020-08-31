@@ -17,7 +17,7 @@ export const HeroName: React.FC<HeroNameProps> = ({ children }) => {
 const styles = StyleSheet.create({
   heroName: {
     flex: 1,
-    height: Spacing.SCALE_70,
+    height: Spacing.SCALE_50,
     fontFamily: Typography.FONT_FAMILY_BOLD,
     fontSize: Typography.FONT_SIZE_18,
     letterSpacing: -1,
