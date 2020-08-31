@@ -6,7 +6,7 @@ import { loadHeroesRequest } from '../../redux/actions/heroes';
 import { addFavorite, removeFavorite } from '../../redux/actions/favorites';
 import { Background, Container } from '../../components/organisms';
 import { Hero, HeroesState } from '../../redux/actions/heroes/types';
-import { HeroCard, SearchBox } from '../../components/molecules';
+import { HeroCard, Warning } from '../../components/molecules';
 
 export function favoritesNavigationOptions<Props>() {
   return {
@@ -81,6 +81,9 @@ const Favorites: React.FC = ({ navigation }) => {
           renderItem={({ item }) => renderItem(item)}
           onEndReached={() => setOffset(offset + 20)}
           onEndReachedThreshold={0.5}
+          ListEmptyComponent={() => (
+            <Warning title="Empty list" description="Your list is empty" />
+          )}
           contentContainerStyle={{ flexGrow: 1, justifyContent: 'flex-start' }}
         />
       </Container>

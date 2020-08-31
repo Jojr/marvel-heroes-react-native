@@ -6,7 +6,7 @@ import { loadHeroesRequest } from '../../redux/actions/heroes';
 import { addFavorite, removeFavorite } from '../../redux/actions/favorites';
 import { Background, Container } from '../../components/organisms';
 import { Hero, HeroesState } from '../../redux/actions/heroes/types';
-import { HeroCard, SearchBox } from '../../components/molecules';
+import { HeroCard, SearchBox, Warning } from '../../components/molecules';
 
 export function homeNavigationOptions<Props>() {
   return {
@@ -37,6 +37,11 @@ const Home: React.FC = ({ navigation }) => {
     setOffset(0);
     dispatch(loadHeroesRequest(0, filterByName));
     [];
+  };
+
+  const resetSearch = () => {
+    setFilterByName('');
+    setOffset(0);
   };
 
   const handleFavorite = (item: Hero) => {
@@ -82,6 +87,9 @@ const Home: React.FC = ({ navigation }) => {
           onEndReached={() => setOffset(offset + 20)}
           onEndReachedThreshold={0.5}
           stickyHeaderIndices={[0]}
+          ListEmptyComponent={() => (
+            <Warning title="No results" description="Cannot find the keyword" />
+          )}
           refreshControl={
             <RefreshControl
               refreshing={false}
@@ -93,10 +101,12 @@ const Home: React.FC = ({ navigation }) => {
           }
           ListHeaderComponent={
             <SearchBox
-              onPress={setFilterByName}
+              //onPress={setFilterByName}
+              onPress={resetSearch}
               value={filterByName}
               placeholder="Buscar personagem Marvel"
               onChangeText={searchByname}
+              showCloseButton={filterByName.length > 0 ? true : false}
             />
           }
           contentContainerStyle={{ flexGrow: 1, justifyContent: 'flex-start' }}
