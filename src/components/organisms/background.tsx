@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, ImageBackground, StyleSheet } from 'react-native';
+import { BACKGROUND_IMAGE } from '../../assets/images';
 
 interface BackgroundProps {
   children: any;
@@ -14,11 +15,7 @@ export const Background: React.FC<BackgroundProps> = ({
     <View style={styles.container}>
       <ImageBackground
         resizeMode="cover"
-        source={
-          imagePath
-            ? imagePath
-            : require('../../assets/images/background-comics.jpg')
-        }
+        source={imagePath ? imagePath : BACKGROUND_IMAGE}
         style={styles.image}>
         {children}
       </ImageBackground>
